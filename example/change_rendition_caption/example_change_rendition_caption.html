@@ -2,8 +2,7 @@
 <html>
     <head>
       <meta charset="UTF-8">
-      <title>Quick Start plugin</title>
-      <link href="http://127.0.0.1:56697/cue_point_test.css" rel="stylesheet">
+      <title>Change Rendition from Caption Button</title>
     </head>
      <body>
     <video
@@ -23,10 +22,11 @@
             totalRenditions,
             mp4Ara = [],
             highestQuality;
-         
             videoID = myPlayer.options()['data-video-id'];
                 myPlayer.catalog.getVideo(videoID, function(error, video) {
                     myPlayer.catalog.load(video);
+                    captionbutton = document.getelementsbyclassname("vjs-captions-button vjs-menu-button vjs-control  vjs-hidden")
+                    console.log(captionbutton);
                     videoName = myPlayer.mediainfo['name'];
                     rendtionsAra = myPlayer.mediainfo.sources;
                     overlay = document.getElementById("insertionPoint")
