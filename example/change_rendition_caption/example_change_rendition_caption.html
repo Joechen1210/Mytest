@@ -26,7 +26,6 @@
                 myPlayer.catalog.getVideo(videoID, function(error, video) {
                     myPlayer.catalog.load(video);
                     captionbutton = document.getElementsByClassName("vjs-captions-button vjs-menu-button vjs-control vjs-hidden");
-                    captionbutton.className = 'vjs-captions-button vjs-menu-button vjs-control';
                     console.log(captionbutton);
                     videoName = myPlayer.mediainfo['name'];
                     rendtionsAra = myPlayer.mediainfo.sources;
@@ -36,6 +35,13 @@
                         if (rendtionsAra[i].container === "MP4" && rendtionsAra[i].hasOwnProperty('src')) {
                             mp4Ara.push(rendtionsAra[i]);
                             overlay.innerHTML += rendtionsAra[i];
+                            myPlayer.addRemoteTextTrack({
+                                  kind: 'captions',
+                                  language: 'en',
+                                  label: 'English',
+                                  src: 'http://solutions.brightcove.com/bcls/captions/adding_captions_to_videos.vtt'
+                                });
+                             console.log(rendtionsAra[i]);
                         };
                     };
                 mp4Ara.sort(function(a, b) {
