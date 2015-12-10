@@ -26,6 +26,7 @@
                 myPlayer.catalog.getVideo(videoID, function(error, video) {
                     myPlayer.catalog.load(video);
                     captionbutton = document.getElementsByClassName("vjs-captions-button")
+                    captionbutton.classList.remove("vjs-hidden")
                     console.log(captionbutton);
                     videoName = myPlayer.mediainfo['name'];
                     rendtionsAra = myPlayer.mediainfo.sources;
