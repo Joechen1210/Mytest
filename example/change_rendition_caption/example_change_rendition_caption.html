@@ -37,9 +37,9 @@
                             overlay.innerHTML += rendtionsAra[i];
                             myPlayer.addRemoteTextTrack({
                                   kind: 'captions',
-                                  language: 'en',
-                                  label: 'English',
-                                  src: 'http://solutions.brightcove.com/bcls/captions/adding_captions_to_videos.vtt'
+                                  language: rendtionsAra[i].asset_id,
+                                  label: rendtionsAra[i].height,
+                                  src: rendtionsAra[i].src
                                 });
                              console.log(rendtionsAra[i]);
                         };
