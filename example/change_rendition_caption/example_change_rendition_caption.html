@@ -25,12 +25,12 @@
             videoID = myPlayer.options()['data-video-id'];
                 myPlayer.catalog.getVideo(videoID, function(error, video) {
                     myPlayer.catalog.load(video);
-                    captionbutton = document.getElementsByClassName("vjs-captions-button")
-                    captionbutton.classList.remove("vjs-hidden")
+                    captionbutton = document.getElementsByClassName("vjs-captions-button");
                     console.log(captionbutton);
+                    captionbutton.classList.remove("vjs-hidden");
                     videoName = myPlayer.mediainfo['name'];
                     rendtionsAra = myPlayer.mediainfo.sources;
-                    overlay = document.getElementById("insertionPoint")
+                    overlay = document.getElementById("insertionPoint");
                     totalRenditions = rendtionsAra.length;
                     for (var i = 0; i < totalRenditions; i++) {
                         if (rendtionsAra[i].container === "MP4" && rendtionsAra[i].hasOwnProperty('src')) {
