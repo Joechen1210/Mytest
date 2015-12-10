@@ -26,7 +26,7 @@
                 myPlayer.catalog.getVideo(videoID, function(error, video) {
                     myPlayer.catalog.load(video);
                     captionbutton = document.getElementsByClassName("vjs-captions-button");
-                    console.log(captionbutton);
+                    console.log(captionbutton[0]);
                     videoName = myPlayer.mediainfo['name'];
                     rendtionsAra = myPlayer.mediainfo.sources;
                     overlay = document.getElementById("insertionPoint");
