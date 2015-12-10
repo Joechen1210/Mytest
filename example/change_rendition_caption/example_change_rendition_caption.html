@@ -31,7 +31,7 @@
                     rendtionsAra = myPlayer.mediainfo.sources;
                     overlay = document.getElementById("insertionPoint");
                     totalRenditions = rendtionsAra.length;
-                 player.one("loadedmetadata",function(){
+                 myPlayer.one("loadedmetadata",function(){
                     for (var i = 0; i < totalRenditions; i++) {
                         if (rendtionsAra[i].container === "MP4" && rendtionsAra[i].hasOwnProperty('src')) {
                             mp4Ara.push(rendtionsAra[i]);
