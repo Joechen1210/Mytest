@@ -45,8 +45,8 @@
                         };
                     };
                  });
-                     $("li").click(function(event) {
-                     alert(event.target.label+" and "+event.target.class);
+                     var l = document.getElementsByTagName('li');
+                     console.log(l);
     });
         });
 });
