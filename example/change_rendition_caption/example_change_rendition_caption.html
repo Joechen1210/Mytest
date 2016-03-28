@@ -11,44 +11,10 @@
           data-account="4005328949001"
           data-player="d572cb12-8536-437d-94ad-7efa353649f7"
           data-embed="default"
-          class="video-js" controls></video>
+          class="video-js"
+          webkit-playsinline></video>
         <script src="//players.brightcove.net/4005328949001/d572cb12-8536-437d-94ad-7efa353649f7_default/index.min.js"></script>
      <h1>....Get Cue infor.........</h1>
       <p id="insertionPoint"></p>
-     <script>
-       videojs("player").ready(function() {
-        var myPlayer = this,
-            videoID,
-            totalRenditions,
-            mp4Ara = [],
-            highestQuality;
-            videoID = myPlayer.options()['data-video-id'];
-                myPlayer.catalog.getVideo(videoID, function(error, video) {
-                    myPlayer.catalog.load(video);
-                    captionbutton = document.getElementsByClassName("vjs-captions-button vjs-menu-button vjs-control ");
-                    console.log(captionbutton);
-                    videoName = myPlayer.mediainfo['name'];
-                    rendtionsAra = myPlayer.mediainfo.sources;
-                    overlay = document.getElementById("insertionPoint");
-                    totalRenditions = rendtionsAra.length;
-                 myPlayer.one("loadedmetadata",function(){
-                    for (var i = 0; i < totalRenditions; i++) {
-                        if (rendtionsAra[i].container === "MP4" && rendtionsAra[i].hasOwnProperty('src')) {
-                            mp4Ara.push(rendtionsAra[i]);
-                            overlay.innerHTML += rendtionsAra[i];
-                            myPlayer.addRemoteTextTrack({
-                                  kind: 'captions',
-                                  language: rendtionsAra[i].asset_id,
-                                  label: rendtionsAra[i].height,
-                                });
-                             console.log(rendtionsAra[i]);
-                        };
-                    };
-                 });
-                     var l = document.getElementsByTagName('li');
-                     console.log(l);
-            });
-        });
-         </script>
     </body>
 </html>
