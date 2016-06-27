@@ -1,0 +1,11 @@
+  <style>
+    .video-js {
+      height: 325px;
+      width: 610px;
+    }
+    #selectID {
+      margin-top: 7px;
+      width: 65px;
+      color: black;
+    }
+  </style>
