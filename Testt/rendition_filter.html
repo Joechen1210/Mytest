@@ -34,9 +34,9 @@ videojs("renditionFilter").ready(function() {
         hlsAra.sort(function(a, b) {
             return b.size - a.size;
         });
+        myPlayer.mediainfo.sources = hlsAra;
         highestQuality = hlsAra[0].src;
         myPlayer.src(highestQuality);
-        myPlayer.mediainfo.sources=[];
     });
 });
 </script>
