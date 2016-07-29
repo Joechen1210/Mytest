@@ -3,7 +3,9 @@
 </head>
 <body>
 <div style="display: block; position: relative; max-width: 480px;"><div style="padding-top: 56.25%;">
-<video data-video-id="4975832564001" 
+<video
+id="player"
+data-video-id="4975832564001" 
 data-account="4005328949001" 
 data-player="default" 
 data-embed="default" 
@@ -11,6 +13,7 @@ class="video-js"
 controls 
 style="width: 100%; height: 100%; position: absolute; top: 0px; bottom: 0px; right: 0px; left: 0px;"></video>
 <script src="//players.brightcove.net/4005328949001/default_default/index.min.js"></script></div></div>
+<script>videojs('player').renditionFilter();</script>
 <scrip>
 videojs("renditionFilter").ready(function() {
     var myPlayer = this,
